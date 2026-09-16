@@ -1,0 +1,29 @@
+/* Tijdelijk groen kleur */
+
+h1{
+    color: rgb(245, 156, 4);
+}
+p{
+    background-color: rgb(4, 205, 245);
+}
+.classList-toggle{
+    color: rgb(243, 198, 198);
+}
+.groen{
+    color: greenyellow;
+}
+
+/*H1 dat verandert*/
+
+.h1-togglen{
+    color: blue;
+}
+
+/*Afbeelding draaien*/
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+.titel-groen{
+    color: green;
+}
