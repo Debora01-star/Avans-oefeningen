@@ -1,22 +1,29 @@
 /* Tijdelijk groen kleur */
+.paragraph-style {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: blue;
+  color: rgb(236, 232, 24);
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* De toggled kleur */
+.green {
+  background-color: green;
+}
 
 h1{
     color: rgb(245, 156, 4);
 }
-p{
+p {
     background-color: rgb(4, 205, 245);
-}
-.classList-toggle{
-    color: rgb(243, 198, 198);
-}
-.groen{
-    color: greenyellow;
-}
-
-/*H1 dat verandert*/
-
-.h1-togglen{
-    color: blue;
+    font-size: 1.2rem;
+    text-decoration: italic;
 }
 
 /*Afbeelding draaien*/
@@ -27,3 +34,7 @@ p{
 .titel-groen{
     color: green;
 }
+.rotate0 {
+    transform: rotate(0deg);
+}
+
