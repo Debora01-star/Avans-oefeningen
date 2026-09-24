@@ -1,40 +1,279 @@
-/* Tijdelijk groen kleur */
-.paragraph-style {
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: blue;
-  color: rgb(236, 232, 24);
-  font-size: 1.3rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+/* Basis typografie */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Great-vibes", sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* De toggled kleur */
-.green {
-  background-color: green;
+h1 {
+    color: rgb(24, 146, 7);
+    margin: 0;
+}
+#paragraph{
+    color:#c408c4;
+    font-size: 25px;
+    transition: 0.3s;
+}
+#paragraph.andere-kleur{
+    color: blue;
 }
 
-h1{
-    color: rgb(245, 156, 4);
+h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    color:#ff9800;
+    font: weight 500px;
 }
+
 p {
-    background-color: rgb(4, 205, 245);
-    font-size: 1.2rem;
-    text-decoration: italic;
+    font-size: 1.1rem;
+    text-align: center;
+}
+#colorBtn{
+    color:#fefbfb;
+}
+#colorBtn{
+    background-color:#d29647;
+}
+#colorBtn.actief:hover{
+    background-color: #07941a;
+
 }
 
-/*Afbeelding draaien*/
-
-.rotate180 {
+.gedraaid{
     transform: rotate(180deg);
 }
-.titel-groen{
-    color: green;
-}
-.rotate0 {
-    transform: rotate(0deg);
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
+/* Knoppen */
+button {
+    background-color: rgb(237, 100, 32);
+    color: white;
+    font-size: 1rem;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.6s ease;
+    align-items: right;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background-color: rgb(222, 244, 27);
+}
+
+.top-controls {
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    
+}
+
+
+/* Accent */
+.accent {
+    color: orange;
+    background-color: black;
+    padding: 5px;
+}
+
+/* Paragraph toggle */
+.paragraph-style {
+    padding: 14px 28px;
+    font-size: 2rem;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    width: 400px;
+    margin-left: 30%;
+}
+.green{
+    background-color: rgb(204, 249, 40);
+}
+.p toggelen{
+    color:#ff00ff;
+}
+img#foto{
+    height: 300px;
+    width: 700px;
+    margin-left: 400px;
+}
+
+section{
+    height: 100px;
+
+
+}
+
+.rotate0 {
+    transform: scale(0.95)rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.rotate180 {
+    transform: scale(0.95)rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Layout main */
+main {
+    display: inline;
+    gap: 30px;
+    padding: 20px;
+    /*grid-template-columns: 1fr,1fr;*/
+}
+
+main section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Puff-container 
+.puff-container {
+    background-image: url(https://img.magnific.com/premium-photo/halloween-background-with-scary-pumpkins-candles-graveyard-night-with-castle-background_123827-25818.jpg?w=1480);
+    position: relative;
+    width: 500px;
+    height: 500px;
+    max-width: 400%;
+    overflow: hidden;
+    margin-top: 15px;
+    transform: scale(0.95)rotate(180deg);
+    transition: transform 1s ease;
+    
+   
+}*/
+
+/* Puff image */
+.puff-image {
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.95) rotate(180deg);
+    transition: transform 0.3s ease, opacity 1s ease;
+}
+#div.puff-container.puff-active{
+    transform:scale(0.95)rotate(180deg);
+    transition: transform 0.3 ease;
+    height: 300px;
+
+}
+#divpuff-container.puff-active{
+   transform:scale(0.95)rotate(0deg);
+    transition: transform 0.3 ease; 
+}
+
+
+/* Mist */
+.mist {
+    position: absolute;
+    inset: 1;
+    background: radial-gradient(circle, rgba(213, 194, 194, 0.7) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Puff actief */
+.puff-active .mist {
+    animation: mistPuff 50s ease forwards;
+    animation-duration: 30s;
+}
+
+.puff-active .puff-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Neon glow box */
+.neon-box {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    animation: neonPulse 2s infinite alternate;
+}
+
+/* Halloween tekst */
+#Halloween {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Dark mode */
+body.dark {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark main section {
+    background: #1e1e1e;
+}
+
+body.dark h1 {
+    color: #ff9800;
+}
+
+body.dark .neon-box {
+    background: #000;
+}
+
+body.dark .puff-image {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+body.dark .mist {
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+}
+
+/* Animaties */
+@keyframes mistPuff {
+    0% { opacity: 0; transform: scale(0.8); }
+    40% { opacity: 0.8; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+    100% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .puff-container {
+        margin: 0 auto;
+    }
+
+    .neon-box {
+        font-size: 0.95rem;
+    }
+}
