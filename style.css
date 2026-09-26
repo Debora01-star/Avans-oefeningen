@@ -3,9 +3,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Great-vibes", sans-serif;
-    background-color: #C8A2C8;;
+    background-color: #b6d957;
+    background-image: linear-gradient(to right,  #76b82a 0%,
+    #d6e84a 30%,
+    #f4d03f 60%,
+    #8bc34a 100% );
+       
     color: #222;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease;
+    min-height: 100vd;
+   
 }
 
 h1{ 
