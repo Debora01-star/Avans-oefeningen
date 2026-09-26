@@ -1,38 +1,136 @@
-/* Basis typografie */
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Great-vibes", sans-serif;
-    background-color: #f7f7f7;
+    background-color: #C8A2C8;;
     color: #222;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1 {
+h1{ 
+    display: inline-block;
+    font-family: "Creepster", cursive;
+    letter-spacing: 14px;
+    font-size: 50px;
     color: rgb(24, 146, 7);
-    margin: 0;
+    margin-left: 80px;
+    align-items: center;
+    font-weight: 800;
+    margin-top: 0.5;
+       
+ }
+ .title-center{
+    text-align: center;
+ }
+ .halloween-title-box {
+    display: inline-block;
 }
+.drip-line {
+    position: relative;
+
+    width: 92%;
+    height: 7px;
+
+    margin: 5px  auto 0;
+    margin-right: 3px;
+    margin-top: 0;
+
+    background-color: orange;
+
+    border-radius: 10%;
+
+    box-shadow:
+        0 0 5px orange,
+        0 0 10px #ff6600;
+}
+
+
+/* Algemene vorm van een druppel */
+.drop {
+    position: absolute;
+
+    top: 5px;
+
+    width: 12px;
+    background-color: orange;
+
+    border-radius: 0 0 60% 60%;
+    transform: scaleX(0.8);
+
+    clip-path: polygon(
+        10% 0%,
+        90% 0%,
+        100% 45%,
+        85% 75%,
+        50% 100%,
+        15% 75%,
+        16% 45%,
+    );
+}
+/* Verschillende druppels */
+.drop1 {
+    left: 8%;
+    width: 7px;
+    height: 16px;
+}
+
+.drop2 {
+    left: 25%;
+    width: 12px;
+    height: 28px;
+}
+
+.drop3 {
+    left: 42%;
+    width: 8px;
+    height: 13px;
+}
+
+.drop4 {
+    left: 59%;
+    width: 13px;
+    height: 24px;
+}
+
+.drop5 {
+    left: 76%;
+    width: 9px;
+    height: 18px;
+}
+
+.drop6 {
+    left: 92%;
+    width: 11px;
+    height: 26px;
+}
+
+
+
 #paragraph{
     color:#c408c4;
     font-size: 25px;
     transition: 0.3s;
 }
-#paragraph.andere-kleur{
-    color: blue;
-}
 
 h2 {
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 25px;
+    font-family: "Creepster", cursive;
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 40px;
     color:#ff9800;
-    font: weight 500px;
+    font-weight: 100;
+    padding:0;
 }
 
 p {
+    font-family: "Nosifer", cursive;
     font-size: 1.1rem;
     text-align: center;
+    margin: 0;
+    font-weight: 100;
 }
+
 #colorBtn{
     color:#fefbfb;
 }
@@ -47,6 +145,170 @@ p {
 .gedraaid{
     transform: rotate(180deg);
 }
+#darkModeBtn{
+    font-family: "Nosifer", cursive;
+    background-color: #ff6600;
+    color: white;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 0 5px #ff6600,
+        0 0 10px #ff6600;
+    width: 350px;   
+    font-size: 18px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+
+#dagenBtn {
+    font-family: "Nosifer", cursive;
+    background-color: #ff6600;
+    color: white;
+    margin-top: 50px;
+    margin-left: 30px;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 0 5px #ff6600,
+        0 0 10px #ff6600;
+    width: 550px;   
+    font-size: 18px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+#darkModeBtn:hover,
+#dagenBtn:hover {
+    background-color: #ff4500;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #ff4500,
+        0 0 25px #ff2200;
+        animation: fireGlow 0.5s infinite alternate;
+}
+@keyframes fireGlow {
+
+    from {
+        box-shadow:
+            0 0 5px #ff6600,
+            0 0 10px #ff4500,
+            0 0 15px #ff2200;
+    }
+
+    to {
+        box-shadow:
+            0 0 10px #ff9900,
+            0 0 20px #ff6600,
+            0 0 30px #ff2200;
+    }
+}
+.fire-button-container {
+    position: relative;
+    display: inline-block;
+
+    margin-top: 30px;
+}
+.flame {
+    position: absolute;
+
+    bottom: 40px;
+
+    width: 22px;
+    height: 38px;
+
+    background-color: #ff6600;
+
+    border-radius: 50% 0% 20% 50%;
+
+    transform: translateY(10px) scale(0.7);
+
+    opacity: 0;
+
+    pointer-events: none;
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #ff3300;
+}
+.flame::after {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 60px;
+
+    left: 6px;
+    bottom: 4px;
+
+    background-color: #ffcc00;
+
+    clip-path: polygon(
+    50% 0%,
+    62% 22%,
+    75% 12%,
+    72% 38%,
+    92% 30%,
+    82% 60%,
+    100% 72%,
+    72% 100%,
+    28% 100%,
+    0% 72%,
+    18% 52%,
+    12% 32%,
+    35% 42%
+);
+}
+
+.flame1 {
+    left: 25%;
+}
+
+.flame2 {
+    left: 50%;
+    height: 45px;
+}
+
+.flame3 {
+    left: 75%;
+}
+.fire-button-container:hover .flame {
+    opacity: 1;
+
+    animation: vlamOmhoog 1s infinite;
+}
+@keyframes vlamOmhoog {
+
+    0% {
+        transform: translateY(10px) scale(0.7);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-40px) scale(0.2);
+        opacity: 0;
+    }
+}
+.flame1 {
+    animation-delay: 0s !important;
+}
+
+.flame2 {
+    animation-delay: 0.3s !important;
+}
+
+.flame3 {
+    animation-delay: 0.6s !important;
+}
 
 /* Header */
 header {
@@ -57,31 +319,63 @@ header {
 }
 
 /* Knoppen */
-button {
-    background-color: rgb(237, 100, 32);
-    color: white;
+.button-grid{
+    font-family: "Nosifer", cursive;
+    background-color: none;
+    color: rgb(227, 164, 54);
     font-size: 1rem;
     padding: 8px 14px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.6s ease;
-    align-items: right;
-    display: inline-block;
-    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: auto;
+    margin-left: 300px;
+
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    white-space: nowrap;
+    width: fit-content;
+
 }
+.button-grid button {
+    font-family: "Nosifer", cursive;
+    background-color: #ff4500;
+    color: white;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+
+    min-width: 220px;
+    min-height: 45px;
+
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+    transition: 0.6s ease;
+     
+}
+   
+
 
 button:hover {
     transform: translateY(-2px);
     background-color: rgb(222, 244, 27);
 }
-
-.top-controls {
-    padding: 3em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    
+h2{
+    margin-top: 40px;
+    color: midnightblue;
+    filter: drop-shadow(0 0 3px magenta);
+}
+.center-subtitle{
+    text-align: center;
+    text-decoration: underline !important;
+    color: midnightblue;
+    filter: drop-shadow(0 0 3px magenta);
 }
 
 
@@ -91,6 +385,7 @@ button:hover {
     background-color: black;
     padding: 5px;
 }
+
 
 /* Paragraph toggle */
 .paragraph-style {
@@ -109,14 +404,10 @@ button:hover {
 .p toggelen{
     color:#ff00ff;
 }
-img#foto{
-    height: 300px;
-    width: 700px;
-    margin-left: 400px;
-}
-
 section{
     height: 100px;
+    margin: 0;
+    padding:0;
 
 
 }
@@ -136,7 +427,7 @@ main {
     display: inline;
     gap: 30px;
     padding: 20px;
-    /*grid-template-columns: 1fr,1fr;*/
+    
 }
 
 main section {
@@ -147,21 +438,6 @@ main section {
     animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Puff-container 
-.puff-container {
-    background-image: url(https://img.magnific.com/premium-photo/halloween-background-with-scary-pumpkins-candles-graveyard-night-with-castle-background_123827-25818.jpg?w=1480);
-    position: relative;
-    width: 500px;
-    height: 500px;
-    max-width: 400%;
-    overflow: hidden;
-    margin-top: 15px;
-    transform: scale(0.95)rotate(180deg);
-    transition: transform 1s ease;
-    
-   
-}*/
-
 /* Puff image */
 .puff-image {
     width: 100%;
@@ -169,36 +445,22 @@ main section {
     transform: scale(0.95) rotate(180deg);
     transition: transform 0.3s ease, opacity 1s ease;
 }
-#div.puff-container.puff-active{
-    transform:scale(0.95)rotate(180deg);
-    transition: transform 0.3 ease;
-    height: 300px;
 
+/*Mist laag 1*/
+.mist-1{
+    animation: mistLinks 12s ease-in-out infinite alternate;
 }
-#divpuff-container.puff-active{
-   transform:scale(0.95)rotate(0deg);
-    transition: transform 0.3 ease; 
+/*Mist laag 2*/
+.mist-2{
+    top:40%;
+    opacity: 0.45;
+    animation: mistRechts 18s ease-in-out infinite alternate;
 }
-
-
-/* Mist */
-.mist {
-    position: absolute;
-    inset: 1;
-    background: radial-gradient(circle, rgba(213, 194, 194, 0.7) 0%, rgba(255,255,255,0) 70%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Puff actief */
-.puff-active .mist {
-    animation: mistPuff 50s ease forwards;
-    animation-duration: 30s;
-}
-
-.puff-active .puff-image {
-    opacity: 1;
-    transform: scale(1);
+/* Mist laag 3*/
+.mist-3{
+    top:55%;
+    opacity:0.35;
+     animation: mistLinks 25s ease-in-out infinite alternate;
 }
 
 /* Neon glow box */
@@ -215,8 +477,21 @@ main section {
 
 /* Halloween tekst */
 #Halloween {
-    margin-top: 15px;
+    margin-left: 60px ;
+    margin-bottom: 30px;
+    margin-right: 100px;
+    font-size: 22px;
+    text-align: right;
     font-weight: bold;
+    color: midnightblue;
+    filter: drop-shadow(0 0 3px magenta);
+    display: inline-block;
+}
+.webben {
+    margin-left: -10px;
+    font-size: 30px;
+    filter: grayscale(100%) brightness(0) invert(1);
+    text-shadow: 0 0 8px white;
 }
 
 /* Dark mode */
@@ -276,4 +551,131 @@ body.dark .mist {
     .neon-box {
         font-size: 0.95rem;
     }
+}
+
+
+.puff-container {
+    position: relative;
+    /*width: 1500px;*/
+    max-width: 95%;
+    height: 360px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c408c4;
+    
+}
+
+.puff-container #foto {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    object-fit: cover;
+    display: block;
+    
+}
+
+.mist::before {
+    content: "";
+    position: absolute;
+    
+    left: 0;
+    bottom: -30px;
+
+    width: 100%;
+    height: 150px;
+    z-index: 1000;
+    pointer-events: none;
+    background-color:white;
+      
+    opacity: 0.7;
+    filter: blur(25px);
+    animation: mistBewegen 4s ease-in-out infinite alternate;
+    border-radius: 50% 40% 60% 30%;
+    
+}
+.mist::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 90px;
+
+    background-color: white;
+
+    right: 20px;
+    top: -10px;
+
+    border-radius: 50%;
+
+    opacity: 0.4;
+    filter: blur(35px);
+}
+
+@keyframes mistBewegen {
+
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+.mist-achtergrond {
+    bottom: 50px;
+    height: 100px;
+
+    opacity: 0.8;
+
+    animation: mistAndereKant 7s ease-in-out infinite alternate;
+}
+
+@keyframes mistAndereKant {
+    from {
+        left: 300px;
+    }
+
+    to {
+        left: -300px;
+    }
+}
+
+#accentBtn{
+    font-family: "Creepster", cursive;
+    background-color : #ff6600;
+    color: white;
+    font-size: 26px;
+    border-radius: 15px;
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #ff4500,
+        0 0 25px #ff2200;
+        animation: fireGlow 0.5s infinite alternate;
+
+}
+#inhoudResultaat{
+    font-family: "Creepster", cursive;
+    background-color : #ff6600;
+    color: white;
+    font-size: 26px;
+    border-radius: 15px;
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #ff4500,
+        0 0 25px #ff2200;
+        animation: fireGlow 0.5s infinite alternate;
+        display: inline-block;
+}
+h3{
+    font-family: "Creepster", cursive;
+    font-size: 30px;
+    margin-top: 40px;
+    color: midnightblue;
+    filter: drop-shadow(0 0 3px magenta);
 }
