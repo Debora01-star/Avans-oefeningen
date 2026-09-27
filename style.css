@@ -115,7 +115,7 @@ h1{
 
 
 #paragraph{
-    color:#c408c4;
+    color:rgb(213, 213, 46);
     font-size: 25px;
     transition: 0.3s;
 }
@@ -139,11 +139,24 @@ p {
 }
 
 #colorBtn{
-    color:#fefbfb;
+    color: black;
 }
 #colorBtn{
-    background-color:#d29647;
+    background-color:#d2c747;
+    border: 3px solid #6b4785;
+    
+    box-shadow:
+        0 0 8px #8a2be2,
+        0 0 10px #8a2be2;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+
+    cursor: pointer;
 }
+
 #colorBtn.actief:hover{
     background-color: #07941a;
 
@@ -155,7 +168,7 @@ p {
 #darkModeBtn{
     font-family: "Nosifer", cursive;
     background-color:#ff6600 ;
-    color: white;
+    color: black;
     
 
     transition: 0.4s ease;
@@ -165,15 +178,24 @@ p {
         0 0 10px #ff6600;
     width: 350px;   
     font-size: 18px;
-    height: 40px;
+    height: 65px;
     border-radius: 15px;
+}
+/* DARK MODE - moet later staan */
+body.dark #darkModeBtn {
+    color: white;
+
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff69b4;
 }
 
 
 #dagenBtn {
     font-family: "Nosifer", cursive;
     background-color: #ff6600;
-    color: white;
+    color: black;
     margin-top: 50px;
     margin-left: 30px;
 
@@ -199,6 +221,24 @@ p {
         0 0 15px #ff4500,
         0 0 25px #ff2200;
         animation: fireGlow 0.5s infinite alternate;
+}
+#musicBtn{
+    font-family: "Nosifer", cursive;
+    background-color: #ff6600;
+    color: black;
+    margin-top: 50px;
+    margin-left: 30px;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 0 5px #ff6600,
+        0 0 10px #ff6600;
+    width: 550px;   
+    font-size: 18px;
+    height: 40px;
+    border-radius: 15px;
+
 }
 @keyframes fireGlow {
 
@@ -317,6 +357,30 @@ p {
 .flame3 {
     animation-delay: 0.6s !important;
 }
+#toggleParagraphBtn,
+#draaiBtn,
+#rechtopBtn{
+   
+    border: 3px solid #8a2be2;
+
+    box-shadow:
+        0 0 5px #8a2be2,
+        0 0 10px #8a2be2,
+        0 0 15px #8a2be2;
+}
+#toggleParagraphBtn:hover,
+#draaiBtn:hover,
+#rechtopBtn:hover,
+#colorBtn:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 10px #ff6600,
+        0 0 20px #8a2be2,
+        0 0 30px #8a2be2;
+
+    filter: brightness(1.15);
+}
 
 /* Header */
 header {
@@ -353,7 +417,7 @@ header {
 .button-grid button {
     font-family: "Nosifer", cursive;
     background-color: #ff4500;
-    color: white;
+    color: black;
     font-size: 1.3rem;
     padding: 10px 20px;
 
@@ -479,7 +543,7 @@ main section {
     color: #fff;
     background: #111;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    box-shadow: 0 0 13px #ff00ff, 0 0 25px #ff00ff;
     animation: neonPulse 2s infinite alternate;
 }
 
@@ -507,6 +571,22 @@ body.dark {
     background-color: #121212;
     background-image: none;
     color: #f5f5f5;
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff69b4;
+}
+body.dark #toggleParagraphBtn,
+body.dark #draaiBtn,
+body.dark #rechtopBtn,
+body.dark #colorBtn,
+body.dark #musicBtn {
+    color: white;
+
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff69b4;
 }
 
 body.dark main section {
@@ -574,6 +654,21 @@ body.dark .mist {
     padding: 0;
     overflow: hidden;
     background-color: #c408c4;
+    animation: spookyGlow 2s infinite alternate;
+}
+@keyframes spookyGlow {
+    from {
+        box-shadow:
+            0 0 5px #8a2be2,
+            0 0 10px #8a2be2;
+    }
+
+    to {
+        box-shadow:
+            0 0 10px #ff00ff,
+            0 0 20px #8a2be2,
+            0 0 30px #ff6600;
+    }
     
 }
 

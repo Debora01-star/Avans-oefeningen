@@ -117,4 +117,25 @@ dagenBtn.addEventListener("click", () => {
 console.log("dagenBtn =", dagenBtn);
 console.log("halloweenTekst =", halloweenTekst);
 
+// - Halloween muziek
+const musicBtn = document.getElementById("musicBtn");
+const halloweenMusic = document.getElementById("halloweenMusic");
 
+halloweenMusic.volume = 0.3;
+
+musicBtn.addEventListener("click", () => {
+
+    if (halloweenMusic.paused) {
+
+        halloweenMusic.play();
+
+        musicBtn.textContent = "🔇 Stop Spooky Music 👻";
+
+    } else {
+
+        halloweenMusic.pause();
+
+        musicBtn.textContent = "🎵 Play Spooky Music 👻";
+    }
+
+});
