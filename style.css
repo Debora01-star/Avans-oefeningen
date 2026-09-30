@@ -784,3 +784,84 @@ h3{
     color: midnightblue;
     filter: drop-shadow(0 0 3px magenta);
 }
+.games-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 25px;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+}
+.game-card {
+    background-color: #2b1838;
+    border: 3px solid #ff6600;
+    border-radius: 15px;
+
+    padding: 20px;
+    min-height: 180px;
+
+    text-align: center;
+}
+.game-card h3 {
+    color: #ff9800;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.filter-buttons button.active {
+    background-color: #2b1838;
+    color: #ff9800;
+    border: 2px solid #ff6600;
+    transform: scale(1.08);
+}
+.extra-buttons {
+    font-family: "Creepster", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+.ketel-buttons {
+    font-family: "Creepster", cursive;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    font-size: 30px;
+    width: 100%;
+    margin-top: 30px;
+    
+}
+.ketel-buttons h3{
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    margin: 0;
+}
+#inhoudResultaat {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    margin-left: 0;
+}
+.funnyGamesBtn {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+   
+}

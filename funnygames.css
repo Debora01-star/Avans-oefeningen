@@ -1,0 +1,40 @@
+.back-btn {
+    display: inline-block;
+
+    font-family: "Creepster", cursive;
+    font-size: 24px;
+
+    background-color: #ff6600;
+    color: black;
+
+    padding: 10px 20px;
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #8a2be2;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px #ff6600,
+        0 0 20px #8a2be2,
+        0 0 30px #ff00ff;
+}
+body {
+    background-image: url("https://disneycruiselineblog.com/wp-content/uploads/2023/10/Disney-Treasure-The-Haunted-Mansion-Parlor-Logo.jpg");
+    /*background-image: url("https://mcdn.wallpapersafari.com/medium/11/8/YmTSnC.jpg");*/
+   /* background-image: url("https://disneyparksblog.com/app/uploads/2023/08/Haunted-Mansion-Wallpapers-Hitchhiking-Ghosts.jpg");*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+};

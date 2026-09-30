@@ -30,7 +30,7 @@ function inhoudBalk(l, b, h) {
 function toonInhoud() {
     const resultaat = inhoudBalk(8, 3, 2);
     document.getElementById("inhoudResultaat").innerText =
-        "De inhoud van de balk is: " + resultaat;
+        "De inhoud van de snoepenketel is: " + resultaat;
 }
 toonInhoud();
 
@@ -139,3 +139,5 @@ musicBtn.addEventListener("click", () => {
     }
 
 });
+
+
