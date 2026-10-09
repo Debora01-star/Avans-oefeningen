@@ -1,4 +1,4 @@
-.back-btn {
+.back-btn{
     display: inline-block;
 
     font-family: "Creepster", cursive;
@@ -29,6 +29,42 @@
         0 0 20px #8a2be2,
         0 0 30px #ff00ff;
 }
+.filter-buttons button{
+    border-radius: 15px;
+     
+    background-color: #1a1a1a;
+    color: #ff6600;
+
+    border: 2px solid #ff6600;
+    border-radius: 15px;
+
+    padding: 12px 25px;
+    margin: 8px;
+
+    font-family: "Nosifer", cursive;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 5px #ff6600,
+        0 0 10px #ff6600;
+
+    transition: 0.3s ease;
+}
+.filter-buttons button:hover{
+    background-color: #ff6600;
+    color: #000;
+
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 0 10px #ff6600,
+        0 0 20px #ff4500,
+        0 0 30px #ff4500;
+}
+
+
 body {
     background-image: url("https://disneycruiselineblog.com/wp-content/uploads/2023/10/Disney-Treasure-The-Haunted-Mansion-Parlor-Logo.jpg");
     /*background-image: url("https://mcdn.wallpapersafari.com/medium/11/8/YmTSnC.jpg");*/
@@ -37,4 +73,248 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-};
+}
+
+#scareBtn {
+    font-family: "Creepster", cursive;
+    font-size: 24px;
+    background-color: #ff6600;
+    color: black;
+    padding: 10px 20px;
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #8a2be2;
+    transition: 0.3s ease;
+}
+#scareLevel {
+    font-family: "Creepster", cursive;
+    font-size: 24px;
+
+    background-color: #1a1a1a;
+    color: #ff6600;
+
+    padding: 10px 15px;
+
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+
+    width: 150px;
+
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #8a2be2;
+
+    outline: none;
+}
+.halloween-interactive {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: -300px;
+}
+
+.bravery-section {
+    flex: 1;
+}
+
+.candy-shop {
+    flex: 1;
+}
+.candy-shop {
+    background-color: #21162e;
+    background-image: url("images/haunted-candy-decoratie.png");
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #ff6600;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translateY(-340px);
+    min-height: 600px;
+    padding: 25px;
+
+    box-shadow:
+        0 0 10px #ff6600,
+        0 0 20px #8a2be2;
+}
+.candy-shop h2 {
+    font-family: "Pirata One", cursive;
+    color:  #ffcc33;
+    text-align: center;
+    text-shadow:
+    0 0 3px #fff2a8,
+    0 0 8px #ffcc33,
+    0 0 16px #ff9900,
+    0 0 25px #ff6600;
+}
+
+.candy-shop p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    color: #e9c8ff;
+    text-align: center;
+}
+.candy-info {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-direction: column;
+    width: 35%;
+    margin-left: auto;
+}
+
+.candy-box {
+    flex: 1;
+    background-color: #392449;
+    border: 2px solid #8a2be2;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow:
+    0 0 5px #f5c6ff,
+    0 0 12px #d580ff,
+    0 0 22px #c99bea,
+    inset 0 0 12px #d580ff;/*binnenrand laten oplichten*/
+    position: relative;/*om de spinnenweb straks in de hoekjes te zetten*/
+}
+#addCandyBtn,
+#resetCandyBtn {
+    font-family: "Creepster", cursive;
+    font-size: 22px;
+
+    background-color: #ff6600;
+    color: black;
+
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+
+    padding: 10px 20px;
+    margin: 10px 5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px #ff6600,
+        0 0 15px #8a2be2;
+
+    transition: 0.3s ease;
+}
+
+#addCandyBtn:hover,
+#resetCandyBtn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px #ff6600,
+        0 0 20px #8a2be2,
+        0 0 30px #ff00ff;
+}
+
+body > h1 {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+}
+.candy-box p:first-child {/*eerste regel in candy-box*/
+    color:  #f5d5ff;
+
+    text-shadow:
+        0 0 3px #f5c6ff,
+        0 0 7px #d580ff;
+}
+
+.candy-box p:last-child {/*laatste regel in candy-box*/
+    color: #ffcc33;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff9900;
+}
+.candy-box::before {/*voor het html element candy-box*/
+    content: "🕸️";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 22px;
+}
+.candy-box::after {
+    content: "🍬";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 22px;
+}
+#resetCandyBtn {
+    background-color: #8a2be2;
+    color: white;
+    box-shadow:
+    0 0 8px #e5b3ff,
+    0 0 18px #b347ff,
+    0 0 28px #8a2be2,
+    inset 0 0 8px #d580ff;
+}
+.candy-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 105px;
+}
+#addCandyBtn {
+    box-shadow:
+        0 0 8px #ffcc66,
+        0 0 18px #ff9900,
+        0 0 28px #ff6600,
+        inset 0 0 8px #ffcc33;
+        border: 3px solid #ffcc33;
+}
+.candy-shop .candy-price {
+    display: table;
+    margin: 15px auto;
+    padding: 8px 18px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgba(101, 20, 2, 0.5);
+    color: #ffcc66;
+    text-shadow:
+    0 0 2px #fff2a8,
+    0 0 5px #ffcc33,
+    0 0 8px #ff9900;
+    border: 3px solid #ffcc33;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 5px #fff2a8,
+        0 0 10px #ffcc33,
+         0 0 18px #ff9900,
+        inset 0 0 8px #ff9900;
+}
+.candy-title-svg {
+    display: block;
+    width: 100%;
+    height: 110px;
+}
+
+.candy-arc-text {
+    fill: #ffcc33;
+    font-family: "Pirata One", cursive;
+    font-size: 42px;
+    fill: #e88a16;
+    stroke: #ffcc33;
+    stroke-width: 0.5px;
+    paint-order: stroke fill;
+    filter: drop-shadow(0 0 30px #ffcc33);
+    filter: drop-shadow(0 0 6px #ff9900);
+     
+}/*omdat moet de p zijn van while you test your bravery, kind van candy-shop maar niet candy-prijs dat is ook kind maar dichtbijzijnde*/
+.candy-shop > p:not(.candy-price) {/*om die ene p te isoleren*/
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #f5d5ff;
+    text-shadow: 0 0 3px #d580ff;
+}

@@ -9,6 +9,7 @@
       rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
       rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Libre+Baskerville:wght@400;700&family=Public+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -37,15 +38,65 @@
 
         </div>
 
-    <p id="filterStatus">9 games found</p>
+        <div class="halloween-interactive">
 
-    <div class="games-grid">
+        <div class="bravery-section">
+            <h2>👻 How brave are you? 👻</h2>
+            <input type="number" id="scareLevel" min="1" placeholder="Enter 1-10">
+            <button type="button" id="scareBtn">Check my scare level</button>
+            <p id="scareResultaat"></p>
+        </div>
+
+
+        <div class="candy-shop">
+            <svg class="candy-title-svg" viewBox="0 0 600 110">
+            <defs>
+            <path id="candy-arc"
+              d="M 35 85 Q 300 20 565 85" />
+            </defs>
+
+            <text class="candy-arc-text">
+            <textPath href="#candy-arc"
+                  startOffset="50%"
+                  text-anchor="middle">
+                🎃 The Haunted Candy Shop 🎃
+            </textPath>
+            </text>
+            </text>
+            </svg>
+
+        <p>While you test your bravery, <br>enjoy our treats!</p>
+        <p class= "candy-price">One candy bag costs € 3,00</p>
+        
+        <div class="candy-info">
+
+            <div class="candy-box">
+            <p>🍬 Candy bags</p>
+            <p id="aantalResultaat">1</p>
+        </div>
+
+        <div class="candy-box">
+            <p>💰 Total price</p>
+            <p id="prijsResultaat"></p>
+        </div>
+
+        </div>
+
+        <div class="candy-buttons">
+            <button type="button" id="addCandyBtn">🍬 Add Candy Bag</button>
+            <button type="button" id="resetCandyBtn">👻 Reset</button>
+        </div>
+
+        </div>
+
+        </div>
+
+       
+        <p id="filterStatus">9 games found</p>
+        <div class="games-grid">
 
         <!--Fictieve button die niet bestaat alleen voor test bedoeld, Monsters oproepen alleen in noodgevallen haha
           <button type="button" data-filter="monsters">🧟 Monsters</button>-->
-
-        <!--Spooky-->
-
         <article class="game-card" data-category="spooky">
 
             <h3>👻 Haunted House</h3>
@@ -132,21 +183,7 @@
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="funnygames.js"></script>
+ <script src="funnygames.js"></script>
 
     
 
