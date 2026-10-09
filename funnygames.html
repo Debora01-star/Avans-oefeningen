@@ -52,15 +52,12 @@
             <svg class="candy-title-svg" viewBox="0 0 600 110">
             <defs>
             <path id="candy-arc"
-              d="M 35 85 Q 300 20 565 85" />
-            </defs>
+              d="M 35 85 Q 300 20 565 85" /></defs>
 
             <text class="candy-arc-text">
             <textPath href="#candy-arc"
                   startOffset="50%"
-                  text-anchor="middle">
-                🎃 The Haunted Candy Shop 🎃
-            </textPath>
+                  text-anchor="middle">🎃 The Haunted Candy Shop 🎃</textPath>
             </text>
             </text>
             </svg>
@@ -88,6 +85,26 @@
         </div>
 
         </div>
+
+        <dialog id="candyDialog"><!-- Popup venster -->
+            <h2>🎃 Candy Bag Configurator 🎃</h2>
+            <label for="candyType">Choose your candy bag:</label><!-- wat de bezoeker gaat kiezen -->
+
+        <select id="candyType"><!-- uitklaapbare keuzelijst -->
+            <option value="normal">🎃 Normal Candy Bag - € 3,00</option>
+            <option value="spooky">👻 Spooky Candy Bag - € 4,00</option>
+        </select>
+
+        <label for="candyAmount">How many candy bags?</label>
+        <input type="number" id="candyAmount" min="1" max="10" value="1">
+        <label for="candySurprise">
+        <input type="checkbox" id="candySurprise">👻 Add Halloween Surprise (+ € 2,00)</label>
+        <p id="candyBonnetje"></p>
+        <button type="button" id="confirmCandyBtn">🍬 Confirm Candy Bags</button>
+        <button type="button" id="closeCandyBtn">❌ Close</button>
+
+        
+        </dialog>
 
         </div>
 

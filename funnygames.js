@@ -66,15 +66,20 @@ console.log(berekenenPrijs(3, 7));
 
 const resultaat = berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes);
 document.getElementById("prijsResultaat").textContent = "€ " + resultaat.toFixed(2);
-const addCandyBtn = document.getElementById("addCandyBtn");
 
+const addCandyBtn = document.getElementById("addCandyBtn");
+const candyDialog = document.getElementById("candyDialog");
 addCandyBtn.addEventListener("click", function () {
-    aantalSnoepzakjes++;
+    candyDialog.showModal();// Open the dialog when the button is clicked
+    toonSamenvatting();
 
     document.getElementById("aantalResultaat").textContent = aantalSnoepzakjes;
 const nieuwePrijs = berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes);
 
 document.getElementById("prijsResultaat").textContent = "€ " + nieuwePrijs.toFixed(2);
+
+});
+
 
 const resetCandyBtn = document.getElementById("resetCandyBtn");
 
@@ -86,9 +91,15 @@ resetCandyBtn.addEventListener("click", function () {
     const resetPrijs = berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes);
 
     document.getElementById("prijsResultaat").textContent = "€ " + resetPrijs.toFixed(2);
-});
+
+    candyType.value = "normal";
+    candyAmount.value = 1;
+    candySurprise.checked = false;
+
+    toonSamenvatting();
 
 });
+
 
 const scareBtn = document.getElementById("scareBtn");
 
@@ -110,4 +121,124 @@ scareBtn.addEventListener("click", function () {
         filterGames("spooky");
         scareResultaat.innerHTML = "👻 Spooky! You're fearless!";
     }
+});
+
+const closeCandyBtn = document.getElementById("closeCandyBtn");
+
+closeCandyBtn.addEventListener("click", function () {
+    candyDialog.close();
+});
+
+const candyType = document.getElementById("candyType");
+candyType.addEventListener("change", function () {//change reageert wanneer een snoepsoort is gekozen
+    console.log(candyType.value);
+});
+
+const candyAmount = document.getElementById("candyAmount");
+candyAmount.addEventListener("input", function () {//input reageert terwijl de aantal snoepen verandert
+    console.log(candyAmount.value);
+});
+
+const candySurprise = document.getElementById("candySurprise");//zoek checkbox in html
+candySurprise.addEventListener("change", function () {//change controleert als het aangevinkt is
+    console.log(candySurprise.checked);
+});
+
+function leesInvoer() {
+    const soort = candyType.value;//value leest de optie de bezoeker heeft gekozen
+    const aantal = Number(candyAmount.value);
+    const leeg = candyAmount.value === "";
+    const verrassing = candySurprise.checked;
+
+    return { soort, aantal, leeg, verrassing };
+}
+console.log(leesInvoer());
+
+function controleerInvoer(invoer) {
+    if (invoer.leeg) {
+    return "⚠️ Please enter the number of candy bags!";
+}
+    if (invoer.aantal < 1) {
+        return "⚠️ Choose at least 1 candy bag!";
+}
+    if (invoer.aantal > 10) {
+    return "⚠️ Choose a maximum of 10 candy bags!";
+}
+    if (!Number.isInteger(invoer.aantal)) {
+    return "⚠️ Please enter a whole number!";
+}
+    return null;//geen foutmelding gevonden
+}
+
+function berekenUitkomst(invoer) {
+    const prijs = invoer.soort === "spooky" ? 4 : 3;//ternary operator, controleer gekozen soort en alsspooky is, kost 4 anders kost 3
+    const basisPrijs = prijs * invoer.aantal;//basisprijs omdat nog geen halloween surprise erbij zit
+
+    let surprisePrijs = 0;
+
+    if (invoer.verrassing === true) {
+    surprisePrijs = 2;
+}
+    if (invoer.aantal >= 5 && invoer.verrassing === true) {
+    surprisePrijs = 0;
+}
+    const totaalPrijs =basisPrijs + surprisePrijs;
+    return { basisPrijs, surprisePrijs, totaalPrijs };
+}
+
+const candyBonnetje = document.getElementById("candyBonnetje");
+
+function toonSamenvatting() {
+    const invoer = leesInvoer();
+    const foutmelding = controleerInvoer(invoer);
+
+    if (foutmelding !== null) {
+        candyBonnetje.textContent = foutmelding;
+        return;
+    }
+
+    const uitkomst = berekenUitkomst(invoer);
+
+    let bericht = "🍬 " + invoer.aantal + " " + invoer.soort +
+        " Candy Bag(s) | Total: € " + uitkomst.totaalPrijs.toFixed(2);
+
+    if (invoer.verrassing && invoer.aantal >= 5) {
+        bericht += " 🎁 FREE Halloween Surprise!";
+    } else if (invoer.verrassing) {
+        bericht += " 🎁 Halloween Surprise: € 2,00";
+    }
+
+    if (invoer.soort === "spooky" && invoer.verrassing) {
+        bericht += " 👻 BOOO! You've unlocked a spooky surprise!";
+    }
+
+    candyBonnetje.textContent = bericht;
+}
+
+candyType.addEventListener("change", toonSamenvatting);
+candyAmount.addEventListener("input", toonSamenvatting);
+candySurprise.addEventListener("change", toonSamenvatting);
+
+const confirmCandyBtn = document.getElementById("confirmCandyBtn");
+
+confirmCandyBtn.addEventListener("click", function () {
+    const invoer = leesInvoer();
+    const foutmelding = controleerInvoer(invoer);
+
+    if (foutmelding !== null) {
+        candyBonnetje.textContent = foutmelding;
+        return;
+    }
+
+    const uitkomst = berekenUitkomst(invoer);
+
+    aantalSnoepzakjes = invoer.aantal;
+
+    document.getElementById("aantalResultaat").textContent =
+        aantalSnoepzakjes;
+
+    document.getElementById("prijsResultaat").textContent =
+        "€ " + uitkomst.totaalPrijs.toFixed(2);
+
+    candyDialog.close();
 });

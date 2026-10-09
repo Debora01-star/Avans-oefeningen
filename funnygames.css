@@ -318,3 +318,62 @@ body > h1 {
     color: #f5d5ff;
     text-shadow: 0 0 3px #d580ff;
 }
+
+/* 🎃 Halloween Candy Configurator */
+
+#candyDialog {
+    background: linear-gradient(135deg, #2b103d, #57236d);
+    color: #fff0c2;
+    border: 3px solid #ffad33;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 430px;
+    box-shadow: 0 0 25px #ff8c00;
+    text-align: center;
+}
+
+#candyDialog::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#candyDialog h2 {
+    color: #ffbd59;
+    text-shadow: 0 0 10px #ff6600;
+}
+
+#candyDialog label {
+    display: block;
+    margin: 15px 0 8px;
+}
+
+#candyDialog select,
+#candyDialog input[type="number"] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #d5a6f5;
+    max-width: 100%;
+}
+
+#candyBonnetje {
+    color: #ffe29a;
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+#candyDialog button {
+    background: #ff8c00;
+    color: #24102f;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#candyDialog button:hover {
+    background: #ffbd59;
+    box-shadow: 0 0 15px #ff8c00;
+}

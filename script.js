@@ -139,5 +139,47 @@ musicBtn.addEventListener("click", () => {
     }
 
 });
+/*
+🎃 CANDY BAG CONFIGURATOR - TESTVERSLAG
+
+
+Test 1: Aantal = 0
+Verwacht: Foutmelding minimaal 1 snoepzakje
+Resultaat: GESLAAGD
+
+Test 2: Aantal = 11
+Verwacht: Foutmelding maximaal 10 snoepzakjes
+Resultaat: GESLAAGD
+
+Test 3: Aantalveld leeg
+Verwacht: Foutmelding aantal invullen
+Resultaat: GESLAAGD
+
+Test 4: Aantal = 2.5
+Verwacht: Foutmelding heel getal invullen
+Resultaat: GESLAAGD
+
+Test 5: Aantal = 5
+Verwacht: Geen foutmelding (null)
+Resultaat: GESLAAGD
+
+Test 6: Spooky, aantal 3, verrassing aan
+Verwacht: € 12 + € 2 = € 14
+Resultaat: GESLAAGD
+
+Test 7: Spooky, aantal 5, verrassing aan
+Verwacht: € 20, verrassing gratis
+Resultaat: GESLAAGD
+
+Test 8: Normal, aantal 10, verrassing uit
+Verwacht: € 30
+Resultaat: GESLAAGD
+
+Extra controles:
+- Confirm weigert een leeg aantalveld: GESLAAGD
+- Reset herstelt de beginwaarden: GESLAAGD
+- Bonnetje verandert automatisch: GESLAAGD
+========================================
+*/
 
 
