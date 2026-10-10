@@ -1,0 +1,76 @@
+
+/* The Gates of the Unknown - Basisstijl */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #120b1f,
+        #30163f,
+        #160c25
+    );
+    color: #f5e6ff;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+header {
+    padding: 55px 20px 25px;
+}
+
+h1 {
+    color: #ff9d00;
+    font-size: 3rem;
+    text-shadow: 0 0 15px #ff6600;
+    margin-bottom: 20px;
+}
+
+header p {
+    color: #e8b9ff;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+#gateEntrance {
+    min-height: 350px;
+}
+
+footer {
+    padding: 30px 15px;
+    color: #ffc078;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Zorg dat de poortafbeelding binnen het scherm past */
+#gateImage {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Week 6 - Indeling van de Page Builder */
+#builderSection,
+#bewerkPaneel,
+#voorbeeldSectie {
+    box-sizing: border-box;/*padding en border worden bij de breedte opgeteld*/
+    width: 32%;
+    padding: 20px;
+    border: 2px solid #a76ac7;
+    border-radius: 15px;
+    background-color: #241332;
+    vertical-align: top;/*zorgt dat ze bovenaan gelijk beginnen*/
+    display: inline-block;
+}
+
+#blokkenOverzicht p {
+    cursor: pointer;
+}
+
+#blokkenOverzicht p.geselecteerd {
+    background-color: #6d327f;
+    border: 2px solid #ff9d00;
+    border-radius: 10px;
+    padding: 10px;
+}

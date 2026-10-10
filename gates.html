@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gates of the Unknown</title>
+    <link rel="stylesheet" href="gates.css">
+</head>
+<body>
+
+    <header>
+        <h1>🦇 The Gates of the Unknown 🦇</h1>
+        <p>Two paths await you. One choice. Endless mysteries.</p>
+    </header>
+
+    <main>
+        <section id="gateEntrance">
+            <img src="images/Gotische kasteelpoort bij volle maan.png" alt="Mysterious gothic gates surrounded by purple mist" id="gateImage"> 
+        </section>
+
+        
+        <!-- Week 6 - Blokkenoverzicht -->
+        <section id="builderSection">
+
+        <h2>🧩 Blokkenoverzicht</h2>
+
+        <div id="blokkenOverzicht">
+        <!-- JavaScript toont hier de toegevoegde blokken -->
+        </div>
+        </section>
+
+        
+        <!-- Week 6 - Bewerkpaneel -->
+        <section id="bewerkPaneel">
+
+        <h2>✏️ Bewerkpaneel</h2>
+
+        <h3>Nieuw blok toevoegen</h3>
+
+        <button type="button" id="voegKopToe">+ Kop</button>
+        <button type="button" id="voegTekstToe">+ Tekst</button>
+        <button type="button" id="voegKnopToe">+ Knop</button>
+
+        <h3>Geselecteerd blok bewerken</h3>
+
+        <p id="selectieInfo">
+        Selecteer eerst een blok in het blokkenoverzicht.
+        </p>
+
+        <label for="blokTekst">Tekst van het blok:</label>
+        <input type="text" id="blokTekst" disabled>
+
+        <button type="button" id="toepassenBtn" disabled>Toepassen</button>
+
+        <button type="button" id="verwijderenBtn" disabled>Verwijderen</button>
+
+        </section>
+
+        
+        <!-- Week 6 - Voorbeeldweergave -->
+        <section id="voorbeeldSectie">
+
+        <h2>👻 Voorbeeldweergave</h2>
+
+        <div id="voorbeeldWeergave">
+        <p>Er zijn nog geen blokken toegevoegd.</p>
+        </div>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>Beyond the gates, your adventure begins...</p>
+    </footer>
+
+    <script src="gates.js"></script>
+</body>
+</html>
