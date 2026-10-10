@@ -377,3 +377,36 @@ body > h1 {
     background: #ffbd59;
     box-shadow: 0 0 15px #ff8c00;
 }
+#spookyList {
+    display: contents;
+}
+/* Week 6 - Responsive voor mobiele schermen */
+@media (max-width: 900px) {
+
+    .halloween-interactive {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .candy-shop {
+        transform: none;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .bravery-section {
+        width: 100%;
+        min-width: 0;
+    }
+}
+@media (min-width: 901px) and (max-width: 1280px) {
+    .candy-shop {
+        transform: none;
+    }
+
+    .halloween-interactive {
+        margin-bottom: 30px;
+    }
+}

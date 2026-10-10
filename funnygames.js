@@ -1,8 +1,53 @@
 
 const filterButtons = document.querySelectorAll(".filter-buttons button");
+// Week 6 - Halloween-games als objecten in een array
+const spookyGames = [
+    {
+        titel: "👻 Haunted House",
+        beschrijving: "Enter the haunted house... if you dare! What is hiding in the darkness?",
+        extra: "spooky"
+    },
+    {
+        titel: "🕯️ Ghost Hunt",
+        beschrijving: "Search for restless ghosts hiding in the darkness. Will you find them before they find you?",
+        extra: "spooky"
+    },
+    {
+        titel: "⚰️ Graveyard Tour",
+        beschrijving: "Take a creepy walk through the graveyard and discover what awakens after midnight.",
+        extra: "spooky"
+    }
+];
+// Week 6 - Maak één Halloween-gamekaart
+function maakGameKaart(game) {
 
+    const artikel = document.createElement("article");
+    artikel.classList.add("game-card");
+    artikel.dataset.category = game.extra;
+
+    const titel = document.createElement("h3");
+    titel.textContent = game.titel;
+
+    const beschrijving = document.createElement("p");
+    beschrijving.textContent = game.beschrijving;
+
+    const categorie = document.createElement("p");
+    categorie.textContent = "Category: " + game.extra;
+
+    artikel.appendChild(titel);
+    artikel.appendChild(beschrijving);
+    artikel.appendChild(categorie);
+
+    return artikel;
+}
+// Week 6 - Toon alle Spooky-gamekaarten
+const spookyList = document.getElementById("spookyList");
+
+spookyGames.forEach((game) => {
+    const kaart = maakGameKaart(game);
+    spookyList.appendChild(kaart);
+});
 const gameCards = document.querySelectorAll(".game-card");
-console.log("Aantal kaarten:", gameCards.length);
 
 const filterStatus = document.getElementById("filterStatus");
 function filterGames(gekozenFilter) {
@@ -12,7 +57,7 @@ function filterGames(gekozenFilter) {
     gameCards.forEach((card) => {
 
         const categorie = card.dataset.category;// we lezen bijv.bij Haunted House spooky
-        console.log("filter:", gekozenFilter,"kaart", categorie);
+        //console.log("filter:", gekozenFilter,"kaart", categorie);
 
          if (gekozenFilter === "all" || categorie === gekozenFilter) {//is de gekozen filter all of de categorie van het gekozen filter
             card.style.display = "block";
@@ -60,9 +105,9 @@ function berekenenPrijs(prijs, aantal) {
     return prijs * aantal;
 }
 
-console.log(berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes));
-console.log(berekenenPrijs(3, 3));
-console.log(berekenenPrijs(3, 7));
+//console.log(berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes));
+//console.log(berekenenPrijs(3, 3));
+//console.log(berekenenPrijs(3, 7));
 
 const resultaat = berekenenPrijs(prijsSnoepzakje, aantalSnoepzakjes);
 document.getElementById("prijsResultaat").textContent = "€ " + resultaat.toFixed(2);
@@ -130,19 +175,10 @@ closeCandyBtn.addEventListener("click", function () {
 });
 
 const candyType = document.getElementById("candyType");
-candyType.addEventListener("change", function () {//change reageert wanneer een snoepsoort is gekozen
-    console.log(candyType.value);
-});
 
 const candyAmount = document.getElementById("candyAmount");
-candyAmount.addEventListener("input", function () {//input reageert terwijl de aantal snoepen verandert
-    console.log(candyAmount.value);
-});
 
-const candySurprise = document.getElementById("candySurprise");//zoek checkbox in html
-candySurprise.addEventListener("change", function () {//change controleert als het aangevinkt is
-    console.log(candySurprise.checked);
-});
+const candySurprise = document.getElementById("candySurprise");
 
 function leesInvoer() {
     const soort = candyType.value;//value leest de optie de bezoeker heeft gekozen
@@ -152,7 +188,7 @@ function leesInvoer() {
 
     return { soort, aantal, leeg, verrassing };
 }
-console.log(leesInvoer());
+//console.log(leesInvoer());
 
 function controleerInvoer(invoer) {
     if (invoer.leeg) {
@@ -215,9 +251,9 @@ function toonSamenvatting() {
     candyBonnetje.textContent = bericht;
 }
 
-candyType.addEventListener("change", toonSamenvatting);
-candyAmount.addEventListener("input", toonSamenvatting);
-candySurprise.addEventListener("change", toonSamenvatting);
+candyType.addEventListener("change", toonSamenvatting);//change reageert wanneer een snoepsoort is gekozen
+candyAmount.addEventListener("input", toonSamenvatting);//input reageert terwijl de aantal snoepen verandert
+candySurprise.addEventListener("change", toonSamenvatting);// checked zoek checkbox in html,change controleert als het aangevinkt is
 
 const confirmCandyBtn = document.getElementById("confirmCandyBtn");
 
